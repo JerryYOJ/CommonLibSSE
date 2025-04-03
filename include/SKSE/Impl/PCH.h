@@ -515,3 +515,5 @@ namespace REL
 
 #include "RE/B/BSCoreTypes.h"
 #include "RE/S/SFTypes.h"
+
+#include "RE/Skyrim.h"
