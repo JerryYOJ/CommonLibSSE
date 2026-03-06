@@ -65,22 +65,32 @@ namespace RE
 
 		bool PickObjects(const NiPoint3& a_origin, const NiPoint3& a_direction, bool a_append = false);
 
+		class Results : public NiTScrapArray<Record*>
+		{
+		public:
+			virtual ~Results();  // 00
+			// members
+			std::uint32_t resultsCount;  // 18
+			std::uint32_t pad1C;         // 1C
+		};
+		static_assert(sizeof(Results) == 0x20);
+
 		// members
 		REX::EnumSet<PickType, std::uint32_t>       pickType;            // 00
 		REX::EnumSet<SortType, std::uint32_t>       sortType;            // 04
 		REX::EnumSet<IntersectType, std::uint32_t>  intersectType;       // 08
 		REX::EnumSet<CoordinateType, std::uint32_t> coordinateType;      // 0C
-		bool                                        frontOnly;           // 10
-		bool                                        observeAppCullFlag;  // 11
-		bool                                        returnNormal;        // 12
-		bool                                        returnSmoothNormal;  // 13
-		bool                                        returnTexture;       // 14
-		bool                                        returnColor;         // 15
+		bool                                        frontOnly;           // 10 - If true, the triangle logic performs a dot product between the triangle's normal and the ray's direction. If the triangle is facing away from the ray, it discards the hit
+		bool                                        observeAppCullFlag;  // 11 - If true, the raycast will ignore objects that are marked as invisible/hidden
+		bool                                        returnNormal;        // 12 - If true, it calculates the crossproduct of the triangle's edges and writes it to Record::normal. If false, it leaves the normal field as 0
+		bool                                        returnSmoothNormal;  // 13 - If true, instead of just using the flat triangle normal, it looks at the 3 vertices of the triangle, reads their individual normals, and interpolates them using barycentric coordinates to give a smooth, rounded normal for the hit location
+		bool                                        returnTexture;       // 14 - Dead code, not used it appears
+		bool                                        returnColor;         // 15 - Dead code, not used it appears
 		std::uint16_t                               pad16;               // 16
-		NiPointer<NiAVObject>                       root;                // 18
-		NiTScrapArray<Record*>                      pickResults;         // 20
-		NiPoint3                                    origin;              // 38
-		NiPoint3                                    direction;           // 44
+		NiPointer<NiAVObject>                       root;                // 18 - What the raycast is performed against
+		Results                                     pickResults;         // 20
+		NiPoint3                                    origin;              // 40 - Dead code, not used it appears
+		std::uint32_t                               pad4C;               // 4C
 
 	private:
 		NiPick() = delete;
