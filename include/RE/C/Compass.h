@@ -10,9 +10,9 @@ namespace RE
 		inline static constexpr auto RTTI = RTTI_Compass;
 		inline static constexpr auto VTABLE = VTABLE_Compass;
 
-        Compass(GFxMovieView* a_view);
-        ~Compass() override = default;                                 // 00
-        
+		Compass(GFxMovieView* a_view);
+		~Compass() override = default;  // 00
+
 		//override HUDObject
 		void Update() override;                                        // 01
 		bool ProcessMessage(UIMessage* a_message) override;            // 02
