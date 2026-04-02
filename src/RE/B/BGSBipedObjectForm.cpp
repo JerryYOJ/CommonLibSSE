@@ -46,6 +46,36 @@ namespace RE
 		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kShield);
 	}
 
+	bool BGSBipedObjectForm::IsHelmet() const
+	{
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kHead) && !IsCirclet();
+	}
+
+	bool BGSBipedObjectForm::IsCirclet() const
+	{
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kCirclet);
+	}
+
+	bool BGSBipedObjectForm::IsAccessory() const
+	{
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kRing) || bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kAmulet) || IsCirclet();
+	}
+
+	bool BGSBipedObjectForm::IsBoots() const
+	{
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kFeet);
+	}
+
+	bool BGSBipedObjectForm::IsGauntlets() const
+	{
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kHands);
+	}
+
+	bool BGSBipedObjectForm::IsChestpiece() const
+	{
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kBody);
+	}
+
 	auto BGSBipedObjectForm::RemoveSlotFromMask(BipedObjectSlot a_slot)
 		-> BipedObjectSlot
 	{
