@@ -53,8 +53,8 @@ namespace RE
 
 	bool BGSBipedObjectForm::IsCirclet() const
 	{
-		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kCirclet) && 
-		   !bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kHair);
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kCirclet) &&
+		       !bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kHair);
 	}
 
 	bool BGSBipedObjectForm::IsAccessory() const
