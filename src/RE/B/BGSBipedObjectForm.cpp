@@ -48,12 +48,13 @@ namespace RE
 
 	bool BGSBipedObjectForm::IsHelmet() const
 	{
-		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kHead) && !IsCirclet();
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kHair, BipedObjectSlot::kCirclet);
 	}
 
 	bool BGSBipedObjectForm::IsCirclet() const
 	{
-		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kCirclet);
+		return bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kCirclet) && 
+		   !bipedModelData.bipedObjectSlots.all(BipedObjectSlot::kHair);
 	}
 
 	bool BGSBipedObjectForm::IsAccessory() const
