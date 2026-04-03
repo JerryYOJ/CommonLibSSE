@@ -559,6 +559,7 @@ set(SOURCES
 	include/RE/C/CommandTable.h
 	include/RE/C/CommonTypeTraits.h
 	include/RE/C/CompactingStore.h
+	include/RE/C/Compass.h
 	include/RE/C/CompiledScriptLoader.h
 	include/RE/C/CompressedArchiveStream.h
 	include/RE/C/ConcreteFormFactory.h
