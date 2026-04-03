@@ -1069,6 +1069,7 @@ set(SOURCES
 	include/RE/H/hkbShapeSetup.h
 	include/RE/H/hkbStateMachine.h
 	include/RE/H/hkp3AxisSweep.h
+	include/RE/H/hkpAabbPhantom.h
 	include/RE/H/hkpAction.h
 	include/RE/H/hkpAgentNnTrack.h
 	include/RE/H/hkpAllCdPointCollector.h
@@ -1146,8 +1147,11 @@ set(SOURCES
 	include/RE/H/hkpShapeContainer.h
 	include/RE/H/hkpShapePhantom.h
 	include/RE/H/hkpShapeRayCastCollectorOutput.h
+	include/RE/H/hkpShapeRayCastInput.h
 	include/RE/H/hkpShapeRayCastOutput.h
 	include/RE/H/hkpShapeType.h
+	include/RE/H/hkpSimpleShapePhantom.h
+	include/RE/H/hkpSimpleWorldRayCaster.h
 	include/RE/H/hkpSimplexSolver.h
 	include/RE/H/hkpSimulationIsland.h
 	include/RE/H/hkpSingleShapeContainer.h
@@ -1163,6 +1167,7 @@ set(SOURCES
 	include/RE/H/hkpWorldLinearCaster.h
 	include/RE/H/hkpWorldObject.h
 	include/RE/H/hkpWorldPostSimulationListener.h
+	include/RE/H/hkpWorldRayCaster.h
 	include/RE/H/hkpWorldRayCastInput.h
 	include/RE/H/hkpWorldRayCastOutput.h
 	include/RE/I/IAIWorldLocationHandle.h
@@ -2043,12 +2048,14 @@ set(SOURCES
 	src/RE/H/hkReferencedObject.cpp
 	src/RE/H/hkStringPtr.cpp
 	src/RE/H/hkVector4.cpp
+	src/RE/H/hkpAabbPhantom.cpp
 	src/RE/H/hkpBroadPhase.cpp
 	src/RE/H/hkpCdBody.cpp
 	src/RE/H/hkpCharacterProxyListener.cpp
 	src/RE/H/hkpMaterial.cpp
 	src/RE/H/hkpProperty.cpp
 	src/RE/H/hkpRigidBody.cpp
+	src/RE/H/hkpShapePhantom.cpp
 	src/RE/H/hkpWorldObject.cpp
 	src/RE/I/IAnimationGraphManagerHolder.cpp
 	src/RE/I/IFormFactory.cpp
