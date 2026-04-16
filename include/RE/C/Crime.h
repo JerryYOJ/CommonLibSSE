@@ -47,14 +47,14 @@ namespace RE
 		BSTArray<ActorHandle>   actorsKnowOfCrime;  // 28
 		TESForm*                owner;              // 40 - owner of stolen item (theft only)
 		std::uint32_t           crimeID;            // 48 - unique serial ID from ProcessLists
-		std::uint8_t            unk4C;              // 4C - status flag
+		bool                    guardsAlarmedAndDispatched;       // 4C - status flag
 		std::uint8_t            pad4D[3];           // 4D
 		std::uint32_t           packedDate;         // 50 - packed game date (day | month<<9 | year<<13)
 		float                   gameTimeElapsed;    // 54 - g_fGameTimeElapsed at time of crime
 		std::uint32_t           fineAmount;         // 58 - gold bounty for this crime
 		std::uint32_t           unk5C;              // 5C
 		TESFaction*             crimeFaction;       // 60
-		std::uint8_t            unk68;              // 68
+		bool                    crimeEstablished;   // 68 - killing witnesses after this pointer wont clear the crime anymore
 		std::uint8_t            pad69;              // 69
 		std::uint16_t           unk6A;              // 6A
 		mutable BSReadWriteLock lock;               // 6C
